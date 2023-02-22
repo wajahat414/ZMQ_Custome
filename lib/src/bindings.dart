@@ -186,6 +186,7 @@ class ZMQBindings {
     }
 
     final String fullPath = _platformPath(name, path: path);
+    print("PATH=$path");
     return DynamicLibrary.open(fullPath);
   }
 

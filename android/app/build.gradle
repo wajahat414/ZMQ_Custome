@@ -26,8 +26,8 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    compileSdkVersion 31
+    ndkVersion "21.1.6352462"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -40,6 +40,9 @@ android {
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
+                main {
+            jniLibs.srcDir "../native/jni"
+        }
     }
 
     defaultConfig {
