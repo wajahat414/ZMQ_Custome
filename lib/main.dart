@@ -44,8 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    _socket = _context.createMonitoredSocket(SocketType.req);
-    _socket.connect("tcp://localhost:5566");
+    _socket = _context.createMonitoredSocket(SocketType.sub);
+    _socket.connect("tcp://demo1.ax1trader.com:8201");
     // host ip address in android simulator is 10.0.2.2
     // _socket.connect("tcp://10.0.2.2:5566");
     // _socket.connect("tcp://192.168.2.18:5566");
@@ -83,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _sendMessage() {
     ++_presses;
-    _socket.send([_presses]);
+    _socket.subscribe('');
   }
 
   @override
